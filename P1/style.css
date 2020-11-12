@@ -1,0 +1,9 @@
+@font-face{
+    font-family: 'unsteadyOversteer';
+    src: url("./font/unsteady-oversteer.ttf")
+}
+
+p {
+   font-family: unsteadyOversteer; 
+   font-size: 3rem;
+}

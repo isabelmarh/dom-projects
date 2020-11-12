@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic HTML Table with JS DOM</title>
+    <style>
+        table,
+        td {
+            border: 1px solid black;
+            padding: 0.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="table"></div>
+    <script>
+        //loop i iterate tens place 
+        // loop j iterates ones place
+        for (let i = 0; i < 10; i++) {
+            //create table row
+            let row = document.createElement("tr");
+            for (let j = 1; j <= 10; j++) {
+                //create table data 
+                let c = document.createElement("td");
+                let val = (i * 10) + j;
+                c.innerText = val;
+                //c is child of tr 
+                row.appendChild(c)
+            }
+            //append data to table
+            document.getElementById("table").appendChild(row)
+        }
+        //first iteration value of i = 0 and j = 1
+    </script>
+</body>
+
+</html>

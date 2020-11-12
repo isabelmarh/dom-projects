@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battery Status API Project</title>
+</head>
+
+<body>
+    <div id="charging"></div>
+    <div id="level"></div>
+    <progress id="progresslevel" max="100"></progress>
+    <div id="dischargeTime"></div>
+</body>
+    <script>
+            function updateBatteryStatus(battery) {
+                document.querySelector('#charging').textContent = battery.charging ? 'charging' : 'not charging';
+                document.querySelector("#level").textContent = `${battery.level * 100}%`;
+                document.querySelector('#progresslevel').value = battery.level*100;
+                document.querySelector('#dischargingTime').textContent = battery.dischargingTime / 60;
+            }
+
+            navigator.getBattery().then(function (battery) {
+                // Update the battery status initially when the promise resolves ...
+                updateBatteryStatus(battery);
+
+                // .. and for any subsequent updates.
+                battery.onchargingchange = function () {
+                    updateBatteryStatus(battery);
+                };
+
+                battery.onlevelchange = function () {
+                    updateBatteryStatus(battery);
+                };
+
+                battery.ondischargingtimechange = function () {
+                    updateBatteryStatus(battery);
+                };
+            });
+    </script>
+
+
+</html>
