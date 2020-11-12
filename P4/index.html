@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="styles.css">
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.js"
+        integrity="sha256-bd8XIKzrtyJ1O5Sh3Xp3GiuMIzWC42ZekvrMMD4GxRg="
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="container">
+        <h1>Weather App</h1>
+        <header>
+        <!-- <label for="city">Enter City Name:</label> -->
+        <input type=text name="city" id="city" placeholder="Enter your city">
+        <input type="submit" value="Submit" onclick="init()">
+        </header>
+        <div id="main">
+            <p id="cord"></p>
+            <p id="weather"></p>
+            <p id="temp"></p>
+        </div>
+
+    </div>
+</body>
+<script>
+    function init() {
+        const cityname = document.getElementById("city").value;
+        const url = "http://api.openweathermap.org/data/2.5/weather?q=";
+        const appid = "f766a2f56fe44c5c22f01b4777d9350c";
+        const apiCall = `${url}${cityname}&appid=${appid}&units=metric`;
+        axios.get(apiCall)
+            .then((res) => {
+                // console.log(res);
+                document.getElementById("cord").innerHTML = `City latitude: 
+            <b>${res.data.coord.lat}<sup>0</sup></b> and City longitude:
+            <b>${res.data.coord.lon}<sup>0</sup></b>`;
+                document.getElementById("weather").innerHTML = `Weather Cloudiness
+            <b>${res.data.weather[0].description}</b>`;
+                document.getElementById("temp").innerHTML = `Humidity:
+            <b>${res.data.main.humidity}%</b>
+            Pressure: <b>${res.data.main.pressure} hpa</b>
+            Temperature: <b>${res.data.main.temp} celsius</b>`;
+            })
+            .catch((err) => {
+                document.write("Invalid City. Please refresh and enter a valid city name");
+            })
+    }
+</script>
+</html>

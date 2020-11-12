@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: rgba(19, 109, 244, 0.653);
+  background-size: cover;
+  background-position: top center;
+  background-image: url("bg.jpg");
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.3));
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 15px 15px;
+}
+
+h1 {
+  font-size: 2rem;
+  padding: 50px 15px 15px;
+  align-self: center;
+  color: #fff;
+  font-size: 32px;
+  font-weight: 500;
+}
+
+header input {
+  width: 100%;
+  max-width: 280px;
+  padding: 20px 15px;
+  border: none;
+  outline: none;
+  border-radius: 2px;
+  color: #313131;
+  font-size: 20px;
+  font-weight: 200;
+}
+
+header input:focus {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+#main {
+  flex: 1 1 100%;
+  padding: 25px 25px 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+#cord {
+  color: #fff;
+  font-size: 32px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+#weather {
+  color: #fff;
+  font-size: 30px;
+  font-weight: 700;
+  font-style: italic;
+  margin-bottom: 15px;
+  text-shadow: 0px 3px rgba(0, 0, 0, 0.4);
+}
+
+#temp {
+  color: #fff;
+  font-size: 30px;
+  font-weight: 900;
+  margin: 30px 0px;
+}
