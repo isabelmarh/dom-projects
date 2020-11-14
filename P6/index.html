@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .rectangle {
+            height: 50px;
+            width: 100px;
+            background-color: #555;
+        }
+    </style>
+    <title>Rectangle CSS</title>
+</head>
+
+<body>
+    <h2>Rectangle CSS</h2>
+    <div class="rectangle" id="rectangle"></div>
+</body>
+<script>
+    debugger;
+    function myFunction() {
+        setInterval(function() {
+            var elem = document.querySelector('.rectangle');
+            var style = getComputedStyle(elem);
+            var h = Number(style.height.split('px')[0]) + 1;
+            var w = Number(style.width.split('px')[0]) + 2;
+            if (w <= 800) {
+                document.getElementById('rectangle').style.height = `${h}px`;
+                document.getElementById('rectangle').style.height = `${w}px`;
+                console.log(h, w);
+            }
+        }, 100);
+    } 
+    myFunction()
+</script>
+
+</html>
