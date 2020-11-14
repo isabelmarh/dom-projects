@@ -19,7 +19,7 @@
     <div class="rectangle" id="rectangle"></div>
 </body>
 <script>
-    debugger;
+    // debugger;
     function myFunction() {
         setInterval(function() {
             var elem = document.querySelector('.rectangle');
@@ -28,7 +28,7 @@
             var w = Number(style.width.split('px')[0]) + 2;
             if (w <= 800) {
                 document.getElementById('rectangle').style.height = `${h}px`;
-                document.getElementById('rectangle').style.height = `${w}px`;
+                document.getElementById('rectangle').style.width = `${w}px`;
                 console.log(h, w);
             }
         }, 100);

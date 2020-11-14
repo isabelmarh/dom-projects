@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .oval {
+            height: 2px;
+            width: 2px;
+            background-color: pink;
+            border-radius: 50%;
+        }
+    </style>
+    <title>Oval</title>
+</head>
+
+<body>
+    <h2>Oval CSS</h2>
+    <div class="oval" id="oval"></div>
+    <script>
+        function myFunction() {
+            var elem = document.querySelector('.oval');
+            var style = getComputedStyle(elem);
+            var h = Number(style.height.split('px')[0]) + 1;
+            var w = Number(style.width.split('px')[0]) + 2;
+            console.log(h, w);
+            if (w <= 800) {
+                document.getElementById('oval').style.height = `${h}px`;
+                document.getElementById('oval').style.width = `${w}px`;
+            } else {
+                clearInterval(timer);
+            }
+        }
+        var timer = setInterval(myFunction, 100);
+    
+        
+    </script>
+</body>
+
+</html>
