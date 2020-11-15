@@ -1,0 +1,104 @@
+#container {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0 auto;
+  width: 50%;
+  padding: 20px;
+}
+
+h1 {
+  font-weight: normal;
+}
+
+#conversion-form {
+  margin: 0 auto;
+}
+
+#label-select {
+  width: 100%;
+}
+
+#options-select {
+  margin-top: 10px;
+}
+
+#label-select label {
+  margin: 10px 130px 10px 0px;
+  width: 50%;
+  padding-right: 30%;
+  font-weight: bolder;
+}
+
+#options-select select {
+  margin: 10px 130px 10px 0px;
+  width: 35%;
+  height: 40px;
+  font-size: 16px;
+  color: #495057;
+}
+
+#input-container{
+    background-color: rgba(245, 245, 220, 0.482);
+    border-radius: 2px;
+    margin-top: 20px;
+    width: 85%;
+}
+
+#input-container label{
+    font-weight: bolder;
+}
+
+.form-group{
+    padding: 10px;
+}
+
+.form-control{
+    display: block;
+    width: 75%;
+    height: 40px;
+    padding: 5px 10px;
+    margin-top: 15px;
+    color: #495057;
+    background-color: #fff;
+    border-radius: 2px;
+    border: 1px solid #ced4da;
+    transition: border-color 0.15s ease-in-out box-shadow 0.15s ease-in-out;
+    font-size: 16px;
+}
+
+textarea{
+    display: block;
+    width: 75%;
+    padding: 5px 10px;
+    margin-top: 15px;
+    color: #495057;
+    border-radius: 2px;
+    border: 1px solid #ced4da;
+    transition: border-color 0.15s ease-in-out box-shadow 0.15s ease-in-out;
+    font-size: 20px;
+}
+
+textarea:read-only{
+    background-color: rgb(247, 244, 244);
+}
+
+.convert-btn{
+    display: block;
+    height: 60px;
+    padding: 20px;
+    font-size: 16px;
+    background: dodgerblue;
+    color: inherit;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+}
+
+#error {
+    color: red;
+    font-size: 14px;
+    padding-top: 14px;
+}
+
+button:disabled{
+    background-color: rgb(206, 202, 202);
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1010 Binary Converter 10</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="container">
+        <h1 id="title">Conversions</h1>
+        <form id="conversion-form">
+            <div id="label-select">
+                <label for="from">From</label> <label for="to">To</label>
+            </div>
+            <div id="options-select">
+                <select id="from" name="from">
+                    <option value="-1" selected>Select</option>
+                    <option value="binary">Binary</option>
+                    <option value="decimal">Decimal</option>
+                </select>
+                <select name="to" id="to" disabled></select>
+            </div>
+            <div id="input-container">
+                <div class="form-group">
+                    <label for="input">Enter Decimal Number: </label>
+                    <input type="number" name="input" id="input"
+                        class="form-control" />
+                    <div id="error"></div>
+                </div>
+                <div class="form-group">
+                    <button name="convert" id="convert"
+                        class="convert-btn">Convert</button>
+                </div>
+                <div class="form-group">
+                    <label for="output">Binary Number: </label>
+                    <textarea name="output" id="output" rows="4"
+                        readonly></textarea>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+<script src="./js/main.js"></script>
+<script src="./js/convert.js"></script>
+
+</html>
