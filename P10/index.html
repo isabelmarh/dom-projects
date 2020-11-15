@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Table</title>
+</head>
+<body>
+    <div class="center">
+        <table id="myTable">
+
+        </table>
+    </div>
+</body>
+<script>
+    function shuffle(array){
+        var currentIndex = array.length,
+        temporaryValue, randomIndex;
+
+        //while there are elements to shuffle ..
+        while (0 !== currentIndex){
+            //pick a remaining element 
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex -= 1;
+
+            //swap it with the current element
+            temporaryValue = array[currentIndex];
+            array[currentIndex] = array[randomIndex];
+            array[randomIndex] = temporaryValue;
+        }
+        return array;
+    }
+    var arr1 = [];
+    for (var i = 1; i <=100; i++){
+        arr1.push(i);
+    }
+    arr = shuffle(arr1);
+
+    var table = '';
+    for (var j = 0; j <= 90; j = j+ 10){
+        table += "<tr>";
+            for(var i = 1; i <= 10; i++){
+                var index = (i +j) -1;
+                table += "<td onclick='clicked(this)'id='" + arr[index] + "'>"
+                    + arr[index] + "</td>";
+            }
+            table += "</tr>\n";
+    }
+    document.getElementById("myTable").innerHTML = table;
+    var num;
+    var clicked = (cell) => {
+        var selected = cell.id;
+        var multiples;
+        for (var i = 1; i<=100; i++){
+            if (multiples > 99)
+            break;
+            multiples = (selected * i);
+            document.getElementById(multiples + "").innerHTML = "*";
+        }
+    }
+
+</script>
+</html>
