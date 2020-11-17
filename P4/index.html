@@ -17,9 +17,10 @@
     <div id="container">
         <h1>Weather App</h1>
         <header>
-        <!-- <label for="city">Enter City Name:</label> -->
-        <input type=text name="city" id="city" placeholder="Enter your city">
-        <input type="submit" value="Submit" onclick="init()">
+            <!-- <label for="city">Enter City Name:</label> -->
+            <input type=text name="city" id="city"
+                placeholder="Enter your city">
+            <input type="submit" value="Submit" onclick="init()">
         </header>
         <div id="main">
             <p id="cord"></p>
@@ -37,7 +38,7 @@
         const apiCall = `${url}${cityname}&appid=${appid}&units=metric`;
         axios.get(apiCall)
             .then((res) => {
-                // console.log(res);
+                console.log(res.data);
                 document.getElementById("cord").innerHTML = `City latitude: 
             <b>${res.data.coord.lat}<sup>0</sup></b> and City longitude:
             <b>${res.data.coord.lon}<sup>0</sup></b>`;
@@ -46,11 +47,12 @@
                 document.getElementById("temp").innerHTML = `Humidity:
             <b>${res.data.main.humidity}%</b>
             Pressure: <b>${res.data.main.pressure} hpa</b>
-            Temperature: <b>${res.data.main.temp} celsius</b>`;
+            Temperature: <b>${Math.floor(res.data.main.temp)} celsius</b>`;
             })
             .catch((err) => {
                 document.write("Invalid City. Please refresh and enter a valid city name");
             })
     }
 </script>
+
 </html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+<style></style>
+
+<body>
+    <div id="main"></div>
+    <script>
+        var main = document.getElementById("main");
+        main.style.width = "2000px";
+        main.style.height = "1200px";
+
+        main.style.backgroundColor = `rgb(${Math.floor(
+            Math.random() * 250
+        )},${Math.floor(Math.random() * 250)},${Math.floor(
+            Math.random() * 250
+        )})`;
+
+        for (var i = 1; i <= 5; i++) {
+            if (i % 2 != 0) {
+                var c = document.createElement("div");
+                c.setAttribute("id", `a${i}`);
+                c.style.width = "38.2%";
+                c.style.height = "100%";
+                c.style.backgroundColor = `rgb(${Math.floor(
+                    Math.random() * 250
+                )},${Math.floor(Math.random() * 250)},${Math.floor(
+                    Math.random() * 250
+                )})`;
+                if (i == 1) {
+                    main.appendChild(c);
+                } else {
+                    document.getElementById(`a${i - 1}`).appendChild(c);
+                }
+            } else {
+                var c = document.createElement("div");
+                c.setAttribute("id", `a${i}`);
+                c.style.height = "38.2%";
+                c.style.width = "100%";
+                c.style.backgroundColor = `rgb(${Math.floor(
+                    Math.random() * 250
+                )},${Math.floor(Math.random() * 250)},${Math.floor(
+                    Math.random() * 250
+                )})`;
+                document.getElementById(`a${i - 1}`).appendChild(c);
+            }
+        }
+    </script>
+</body>
+
+</html>
