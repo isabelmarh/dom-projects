@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+
+    <title>Clock</title>
+</head>
+
+<body>
+    <div id="clock"></div>
+    <script>
+        let clock = () => {
+            let date = new Date();
+            let hrs = date.getHours();
+            let mins = date.getMinutes();
+            let secs = date.getSeconds();
+
+            let am_pm = (hrs < 12 ) ? 'AM' : 'PM';
+            hrs = (hrs === 0 ) ? 12 : (hrs > 12 ? hrs -12 : hrs)
+
+            hrs = hrs < 10 ? "0" + hrs : hrs;
+            mins = mins < 10 ? "0" + mins : mins;
+            secs = secs < 10 ? "0" + secs : secs;
+            
+            // let am_pm = 'AM';
+            // if (hrs === 0){
+            //     hrs = 12;
+            //     am_pm = 'AM'
+            // } 
+            // if (hrs > 12){
+            //     hrs = hrs - 12;
+            //     am_pm = 'PM';
+            // }
+
+
+            let time = `${hrs}:${mins}:${secs}:${am_pm}`
+
+            document.getElementById("clock").innerText = time
+            setInterval(clock, 1000)
+        }
+        clock();
+    </script>
+</body>
+
+</html>
